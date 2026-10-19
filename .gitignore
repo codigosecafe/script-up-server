@@ -1,1 +1,12 @@
 padrao.sh
+.env
+.env.*
+!.env.example
+*.log
+*.pem
+*.key
+id_ed25519*
+id_rsa*
+.DS_Store
+__pycache__/
+*.pyc

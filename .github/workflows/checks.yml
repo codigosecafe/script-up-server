@@ -1,0 +1,20 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  scripts:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install validation tools
+        run: sudo apt-get update && sudo apt-get install -y zsh shellcheck
+      - name: ShellCheck (new Bash scripts)
+        run: shellcheck --severity=warning --exclude=SC1090,SC1091,SC2034 setup.sh lib/*.sh modules/*.sh config/env.sh
+      - name: Isolated tests and syntax validation
+        run: python3 -m unittest discover -s tests -v
