@@ -51,8 +51,8 @@ quando apenas alguns módulos foram instalados.
 Comandos opcionais, não executados por `install all`:
 
 ```bash
-bash setup.sh git 'Sandro | DevAgress' 'codigosecafe@gmail.com'
-bash setup.sh ssh 'Sandro | DevAgress <codigosecafe@gmail.com>' --no-passphrase
+bash setup.sh git 'Seu Nome' 'voce@example.com'
+bash setup.sh ssh 'Seu Nome <voce@example.com>' --no-passphrase
 ```
 
 Sem `--no-passphrase`, o SSH solicita uma senha. Usa Ed25519 e recusa

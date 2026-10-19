@@ -61,11 +61,11 @@ class SetupTests(unittest.TestCase):
 
     @unittest.skipIf(os.geteuid() == 0, "O comando de identidade exige usuário normal")
     def test_git_identity_is_configured_in_isolated_home(self):
-        result = self.run_setup("git", "Sandro | DevAgress", "codigosecafe@gmail.com")
+        result = self.run_setup("git", "Pessoa | Desenvolvimento", "pessoa@example.com")
         self.assertEqual(result.returncode, 0, result.stderr)
         config = (self.home / ".gitconfig").read_text()
-        self.assertIn("Sandro | DevAgress", config)
-        self.assertIn("codigosecafe@gmail.com", config)
+        self.assertIn("Pessoa | Desenvolvimento", config)
+        self.assertIn("pessoa@example.com", config)
 
     @unittest.skipIf(os.geteuid() == 0, "O comando de identidade exige usuário normal")
     def test_ssh_key_has_no_passphrase_and_is_never_overwritten(self):

@@ -10,3 +10,4 @@ id_rsa*
 .DS_Store
 __pycache__/
 *.pyc
+mariadb.env
